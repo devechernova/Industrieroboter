@@ -46,4 +46,15 @@ namespace Industrieroboter.Models;
     {
         return art + " (Verschleiss " + verschleiss + " %)";
     }
+
+    public void Benutzen(int wert)
+    {
+        verschleiss += wert;
+
+        if (verschleiss > 100)
+        {
+            verschleiss = 100;
+        }
+    }
+
 }

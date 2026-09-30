@@ -85,7 +85,20 @@ internal class Program
                     break;
 
                 case 4:
-                    Console.WriteLine("Werkzeug benutzen");
+
+                    Console.Write("Platz: ");
+                    int platzZumBenutzen =
+                        Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Verschleiss erhoehen um: ");
+                    int wert =
+                        Convert.ToInt32(Console.ReadLine());
+
+                    roboter.WerkzeugBenutzen(
+                        platzZumBenutzen,
+                        wert
+                    );
+
                     break;
 
                 case 5:

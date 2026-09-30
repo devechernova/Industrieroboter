@@ -102,4 +102,37 @@ public class Industrieroboter
             }
         }
     }
+
+    public void WerkzeugBenutzen(int platz, int wert)
+    {
+        if (platz < 0 || platz >= maxAnzWerkzeuge)
+        {
+            Console.WriteLine(
+                "Benutzen nicht moeglich, da Platz "
+                + platz
+                + " nicht existiert."
+            );
+
+            return;
+        }
+
+        if (werkzeugkasten[platz] == null)
+        {
+            Console.WriteLine(
+                "Benutzen nicht moeglich, da Platz "
+                + platz
+                + " leer ist."
+            );
+
+            return;
+        }
+
+        werkzeugkasten[platz].Benutzen(wert);
+
+        Console.WriteLine(
+            "Werkzeug auf Platz "
+            + platz
+            + " wurde benutzt."
+        );
+    }
 }
