@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace Industrieroboter.Models;
 
-internal class Greifer
+public class Greifer : Werkzeug
 {
+    public Greifer(string art, int verschleiss) : base(art, verschleiss)
+    {
+    }
+
+    public override void Ausgeben()
+    {
+        Console.WriteLine("Greifer (Verschleiss " + verschleiss + " %)");
+    }
 }
