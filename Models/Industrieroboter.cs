@@ -8,17 +8,17 @@ namespace Industrieroboter.Models;
 
 public class Industrieroboter
 {
-    private const int maxAnzwerkzeuge = 10;
+    private const int maxAnzWerkzeuge = 10;
     private Werkzeug[] werkzeugkasten;
 
     public Industrieroboter()
     {
-        werkzeugkasten = new Werkzeug[maxAnzwerkzeuge];
+        werkzeugkasten = new Werkzeug[maxAnzWerkzeuge];
     }
 
     public bool WerkzeugHinzufuegen(Werkzeug werkzeug, int platz)
     {
-        if (platz < 0 || platz >= maxAnzwerkzeuge)
+        if (platz < 0 || platz >= maxAnzWerkzeuge)
         {
             Console.WriteLine("Hinzufuegen nicht moeglich, da Platz "
                 +  platz
