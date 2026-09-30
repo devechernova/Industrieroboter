@@ -83,4 +83,23 @@ public class Industrieroboter
 
         return true;
     }
+    public void WerkzeugkastenAnzeigen()
+    {
+        for (int i = 0; i < maxAnzWerkzeuge; i++)
+        {
+            if (werkzeugkasten[i] == null)
+            {
+                Console.WriteLine("Platz " + i + ": leer");
+            }
+            else
+            {
+                Console.WriteLine(
+                    "Platz "
+                    + i
+                    + ": "
+                    + werkzeugkasten[i].Ausgeben()
+                );
+            }
+        }
+    }
 }
