@@ -6,6 +6,18 @@ using System.Threading.Tasks;
 
 namespace Industrieroboter.Models;
 
-internal class Bohrer
+public class Bohrer : Werkzeug
 {
+    private int groesse;
+
+    public Bohrer(string art, int verschleiss, int groesse):
+        base(art, verschleiss)
+    {
+        this.groesse = groesse;
+    }
+    public override void Ausgeben()
+    {
+        Console.WriteLine("Bohrer mit Groesse" + groesse + " (Verschleiss " + verschleiss +" %)");
+    }
 }
+
