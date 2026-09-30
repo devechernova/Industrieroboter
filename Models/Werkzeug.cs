@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Industrieroboter.Models;
 
-{
     public class Werkzeug
     {
         private string art;
@@ -48,4 +47,3 @@ namespace Industrieroboter.Models;
             Console.WriteLine($"{art} (Verschleiss {verschleiss} %)");
         }
     }
-}

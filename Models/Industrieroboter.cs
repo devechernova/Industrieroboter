@@ -6,6 +6,78 @@ using System.Threading.Tasks;
 
 namespace Industrieroboter.Models;
 
-internal class Industrieroboter
+public class Industrieroboter
 {
+    private const int maxAnzwerkzeuge = 10;
+    private Werkzeug[] werkzeugkasten;
+
+    public Industrieroboter()
+    {
+        werkzeugkasten = new Werkzeug[maxAnzwerkzeuge];
+    }
+
+    public bool WerkzeugHinzufuegen(Werkzeug werkzeug, int platz)
+    {
+        if (platz < 0 || platz >= maxAnzwerkzeuge)
+        {
+            Console.WriteLine("Hinzufuegen nicht moeglich, da Platz "
+                +  platz
+                + " nicht existiert.");
+
+            return false;
+        }
+
+        if (werkzeugkasten[platz] != null)
+        {
+            Console.WriteLine("Hinzufuegen nicht moeglich, da Platz "
+                + platz
+                + " belegt ist.");
+
+            return false;
+        }
+
+        werkzeugkasten[platz] = werkzeug;
+
+        Console.WriteLine(
+    "Werkzeug wurde auf Platz "
+    + platz
+    + " hinzugefuegt.");
+
+        return true;
+    }
+
+    public bool WerkzeugEntfernen(int platz)
+    {
+        if (platz < 0 || platz >= maxAnzWerkzeuge)
+        {
+            Console.WriteLine(
+                "Entfernen nicht moeglich, da Platz "
+                + platz
+                + " nicht existiert."
+            );
+
+            return false;
+        }
+
+        if (werkzeugkasten[platz] == null)
+        {
+            Console.WriteLine(
+                "Entfernen nicht moeglich, da Platz "
+                + platz
+                + " nicht belegt ist."
+            );
+
+            return false;
+        }
+
+        werkzeugkasten[platz] = null;
+
+        Console.WriteLine(
+            "Werkzeug auf Platz "
+            + platz
+            + " wurde entfernt."
+        );
+
+        return true;
+    }
 }
