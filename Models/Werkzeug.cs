@@ -42,8 +42,8 @@ namespace Industrieroboter.Models;
             }
         }
 
-        public virtual void Ausgeben()
-        {
-            Console.WriteLine($"{art} (Verschleiss {verschleiss} %)");
-        }
+    public virtual string Ausgeben()
+    {
+        return art + " (Verschleiss " + verschleiss + " %)";
     }
+}

@@ -12,8 +12,10 @@ public class Schweisser : Werkzeug
     {
     }
 
-    public override void Ausgeben()
+    public override string Ausgeben()
     {
-        Console.WriteLine("Schweisser (Verschleiss " + verschleiss + " %)");
+        return "Schweisser (Verschleiss "
+            + verschleiss
+            + " %).";
     }
 }

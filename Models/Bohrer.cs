@@ -15,9 +15,13 @@ public class Bohrer : Werkzeug
     {
         this.groesse = groesse;
     }
-    public override void Ausgeben()
+    public override string Ausgeben()
     {
-        Console.WriteLine("Bohrer mit Groesse" + groesse + " (Verschleiss " + verschleiss +" %)");
+        return "Bohrer mit Groesse "
+            + groesse
+            + " (Verschleiss "
+            + verschleiss
+            + " %).";
     }
 }
 

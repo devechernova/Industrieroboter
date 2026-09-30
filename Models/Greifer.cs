@@ -12,8 +12,10 @@ public class Greifer : Werkzeug
     {
     }
 
-    public override void Ausgeben()
+    public override string Ausgeben()
     {
-        Console.WriteLine("Greifer (Verschleiss " + verschleiss + " %)");
+        return "Greifer (Verschleiss "
+            + verschleiss
+            + " %).";
     }
 }

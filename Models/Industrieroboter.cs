@@ -39,9 +39,11 @@ public class Industrieroboter
         werkzeugkasten[platz] = werkzeug;
 
         Console.WriteLine(
-    "Werkzeug wurde auf Platz "
+    "Hinzugefuegtes Werkzeug auf Platz "
     + platz
-    + " hinzugefuegt.");
+    + ": "
+    + werkzeug.Ausgeben()
+);
 
         return true;
     }
@@ -69,14 +71,15 @@ public class Industrieroboter
 
             return false;
         }
-
+        Werkzeug entferntesWerkzeug = werkzeugkasten[platz];
         werkzeugkasten[platz] = null;
 
         Console.WriteLine(
-            "Werkzeug auf Platz "
-            + platz
-            + " wurde entfernt."
-        );
+    "Entferntes Werkzeug auf Platz "
+    + platz
+    + ": "
+    + entferntesWerkzeug.Ausgeben()
+);
 
         return true;
     }
