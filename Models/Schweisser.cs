@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace Industrieroboter.Models;
 
-internal class Schweisser
+public class Schweisser : Werkzeug
 {
+    public Schweisser(string art, int verschleiss) : base(art, verschleiss)
+    {
+    }
+
+    public override void Ausgeben()
+    {
+        Console.WriteLine("Schweisser (Verschleiss " + verschleiss + " %)");
+    }
 }
