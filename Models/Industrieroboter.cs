@@ -42,8 +42,7 @@ public class Industrieroboter
     "Hinzugefuegtes Werkzeug auf Platz "
     + platz
     + ": "
-    + werkzeug.Ausgeben()
-);
+    + werkzeug.Ausgeben());
 
         return true;
     }
@@ -78,8 +77,7 @@ public class Industrieroboter
     "Entferntes Werkzeug auf Platz "
     + platz
     + ": "
-    + entferntesWerkzeug.Ausgeben()
-);
+    + entferntesWerkzeug.Ausgeben());
 
         return true;
     }
@@ -188,11 +186,45 @@ public class Industrieroboter
             else
             {
                 belegtePlaetze++;
-            }
-        }
-        Console.WriteLine("Freie Plaetze: " + freiePlaetze);
-        Console.WriteLine("Belegte Plaetze: " + belegtePlaetze);
-    }
 
+                gesamtVerschleiss +=
+werkzeugkasten[i].GetVerschleiss();
+
+
+                if (werkzeugkasten[i].GetVerschleiss() > maxVerschleiss)
+                {
+                    maxVerschleiss =
+                        werkzeugkasten[i].GetVerschleiss();
+
+                    staerkstesWerkzeug =
+                        werkzeugkasten[i];
+                }
+            }
+
+        }
+
+            double durchschnittlicherVerschleiss = 0;
+
+            if (belegtePlaetze > 0)
+            {
+                durchschnittlicherVerschleiss =
+                    (double)gesamtVerschleiss / belegtePlaetze;
+            }
+
+            Console.WriteLine("Freie Plaetze: " + freiePlaetze);
+            Console.WriteLine("Belegte Plaetze: " + belegtePlaetze);
+            Console.WriteLine("Gesamtverschleiss: " + gesamtVerschleiss);
+            Console.WriteLine("Durchschnittlicher Verschleiss: " + durchschnittlicherVerschleiss);
+
+            if (staerkstesWerkzeug != null)
+            {
+                Console.WriteLine(
+                    "Staerkst verschlissenes Werkzeug: "
+                    + staerkstesWerkzeug.Ausgeben());
+            }
+        
+    }
 }
+
+
 

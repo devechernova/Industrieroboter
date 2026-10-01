@@ -62,4 +62,9 @@ namespace Industrieroboter.Models;
         verschleiss = 0;
     }
 
+    public int GetVerschleiss()
+    {
+        return verschleiss;
+    }
+
 }
