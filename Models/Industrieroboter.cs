@@ -135,4 +135,37 @@ public class Industrieroboter
             + " wurde benutzt."
         );
     }
+
+    public void WerkzeugWarten(int platz)
+    {
+        if (platz < 0 || platz >= maxAnzWerkzeuge)
+        {
+            Console.WriteLine(
+                "Wartung nicht moeglich, da Platz "
+                + platz
+                + " nicht existiert."
+            );
+
+            return;
+        }
+
+        if (werkzeugkasten[platz] == null)
+        {
+            Console.WriteLine(
+                "Wartung nicht moeglich, da Platz "
+                + platz
+                + " leer ist."
+            );
+
+            return;
+        }
+
+        werkzeugkasten[platz].Warten();
+
+        Console.WriteLine(
+            "Werkzeug auf Platz "
+            + platz
+            + " wurde gewartet."
+        );
+    }
 }

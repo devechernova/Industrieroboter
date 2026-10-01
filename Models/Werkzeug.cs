@@ -57,4 +57,9 @@ namespace Industrieroboter.Models;
         }
     }
 
+    public void Warten()
+    {
+        verschleiss = 0;
+    }
+
 }

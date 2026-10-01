@@ -102,7 +102,13 @@ internal class Program
                     break;
 
                 case 5:
-                    Console.WriteLine("Werkzeug warten");
+
+                    Console.Write("Platz: ");
+                    int platzZumWarten =
+                        Convert.ToInt32(Console.ReadLine());
+
+                    roboter.WerkzeugWarten(platzZumWarten);
+
                     break;
 
                 case 6:
