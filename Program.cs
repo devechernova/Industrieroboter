@@ -35,7 +35,11 @@ internal class Program
 
             Console.WriteLine("\nAuswahl: ");
 
-            int auswahl = Convert.ToInt32(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int auswahl))
+            {
+                Console.WriteLine("Bitte eine Zahl eingeben.");
+                continue; 
+            }
 
             switch (auswahl)
             {
