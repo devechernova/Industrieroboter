@@ -168,4 +168,31 @@ public class Industrieroboter
             + " wurde gewartet."
         );
     }
+
+    public void StatistikAnzeigen()
+    {
+        int freiePlaetze = 0;
+        int belegtePlaetze = 0;
+
+        int gesamtVerschleiss = 0;
+
+        Werkzeug? staerkstesWerkzeug = null;
+        int maxVerschleiss = -1;
+
+        for (int i = 0; i < maxAnzWerkzeuge; i++)
+        {
+            if (werkzeugkasten[i] == null)
+            {
+                freiePlaetze++;
+            }
+            else
+            {
+                belegtePlaetze++;
+            }
+        }
+        Console.WriteLine("Freie Plaetze: " + freiePlaetze);
+        Console.WriteLine("Belegte Plaetze: " + belegtePlaetze);
+    }
+
 }
+

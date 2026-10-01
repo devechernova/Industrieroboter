@@ -32,6 +32,7 @@ internal class Program
             Console.WriteLine("4. Werkzeug benutzen");
             Console.WriteLine("5. Werkzeug warten");
             Console.WriteLine("6. Beenden");
+            Console.WriteLine("7. Statistik");
 
             Console.WriteLine("\nAuswahl: ");
 
@@ -117,6 +118,12 @@ internal class Program
 
                 case 6:
                     beenden = true;
+                    break;
+
+                case 7:
+
+                    roboter.StatistikAnzeigen();
+
                     break;
 
                 default:
